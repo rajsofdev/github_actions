@@ -1,5 +1,7 @@
 name: 01 - Building Blocks
-on: push
+on:
+    schedule:
+      - cron: '*/3 * * * *'
 
 jobs:
     echo-hello: #this is a job
