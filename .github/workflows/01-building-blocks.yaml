@@ -7,6 +7,8 @@ jobs:
         steps:
             - name: say hello # this is a step
               run: echo "Hello World"
+            - name: another step
+              run: echo "Hello I am end step of job echo-hello"
     echo-goodbye:
         runs-on: ubuntu-latest
         steps:
