@@ -15,6 +15,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Show OS
+        shell: bash
         run: |
           echo "This job is running on a Windows runner. event name - ${{ github.event_name }}"
           echo "Runner OS: $RUNNER_OS"
