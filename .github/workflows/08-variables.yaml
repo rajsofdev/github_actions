@@ -29,11 +29,12 @@ jobs:
                 echo "I am from step ovveritten: ${{ env.OVERWRITTEN }}"
     echo2:
         runs-on: ubuntu-latest
+        #environment: staging
         steps:
           - name: print variables
             run: |
-              echo "I am owner of staging env: ${{ vars.OWNER }}"
-              echo "I am from staging env: ${{ vars.TARGET }}"
+              echo "I am owner of staging env: ${{ vars.OWNER_VAR }}"
+              echo "I am from staging env: ${{ vars.TARGET_VAR }}"
               echo "I am from prod - Repo: ${{ vars.REPO_VAR }}"
               echo "I am from prod - Repo: ${{ vars.REPO_VAR2 }}"
 
@@ -43,7 +44,7 @@ jobs:
         steps:
           - name: print prod variables
             run: |
-              echo "I am owner from prod env: ${{ vars.OWNER }}"
-              echo "I am from prod environemt env: ${{ vars.TARGET }}"
+              echo "I am owner from prod env: ${{ vars.OWNER_VAR }}"
+              echo "I am from prod environemt env: ${{ vars.TARGET_VAR }}"
               echo "I am from prod - Repo: ${{ vars.REPO_VAR }}"
               echo "I am from prod - Repo: ${{ vars.REPO_VAR2 }}"
