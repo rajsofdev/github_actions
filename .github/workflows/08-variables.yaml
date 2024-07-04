@@ -29,7 +29,7 @@ jobs:
                 echo "I am from step ovveritten: ${{ env.OVERWRITTEN }}"
     echo2:
         runs-on: ubuntu-latest
-        #environment: staging
+        environment: staging #uncommenting
         steps:
           - name: print variables
             run: |
