@@ -1,0 +1,14 @@
+name: my NPM Package workflow
+on: workflow_dispatch
+
+jobs:
+  node-20-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3 #here the action will setpu
+      #the node with the below version 20
+        with:
+            node-version: 20
+      - run: npm ci
+      - run: npm test
+      - run: npm publish ...

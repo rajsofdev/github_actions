@@ -1,0 +1,17 @@
+name: My NPM workflow
+on: create
+    #[push, pull_request]
+
+jobs:
+  node-16-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.event_name }} == "push"
+        run: |
+          echo "Triggered by a push event"
+          echo "Running on ${{ github.ref_name }}"
+      - uses: actions/setup-node@v3
+        with:
+            node-version: 16
+      - run: npm ci
+      - run: npm test
