@@ -4,7 +4,7 @@ on:
 
 jobs:
     print_job:
-        runs_on: ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: this is first step
               run: echo "Hello World"
