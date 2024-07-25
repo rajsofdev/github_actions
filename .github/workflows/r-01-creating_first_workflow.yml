@@ -1,6 +1,6 @@
 name: my first workflow
-on:
-    push
+on: create
+    #push
 
 jobs:
     echo-hello:
