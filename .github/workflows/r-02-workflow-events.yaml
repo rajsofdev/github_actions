@@ -1,7 +1,9 @@
-name: Workflow Events
+name: 02 Workflow Events
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '0/3 * * * *'
   workflow_dispatch:
 jobs:
     echo:
