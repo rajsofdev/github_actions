@@ -14,9 +14,14 @@ jobs:
     echo-goodbye:
         runs-on: ubuntu-latest
         steps:
+            - name: Succed
+              run: |
+                echo "I will succeed because having 0 as exit code"
+                exit 0
+
             - name: failed step #step1
               run: |
-                echo "I will succed"
-                exit 0 #use 0 for success and 1 for fail
+                echo "I will fail"
+                exit 1 #use 0 for success and 1 for fail
             - name: Say Good bye #step 2
               run: echo "Goodbye"
