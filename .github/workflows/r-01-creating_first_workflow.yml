@@ -3,8 +3,18 @@ on:
     push
 
 jobs:
-    print_job:
+    echo-hello:
         runs-on: ubuntu-latest
         steps:
-            - name: this is first step
+            - name: Hello
               run: echo "Hello World"
+    echo-goodbye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: failing step
+              run: |
+                echo "I will fail"
+                exit 1
+            - name: say goodbye
+              run: echo "Good bye"
+    

@@ -1,6 +1,6 @@
 name: 08 - using variables
 on:
-    push:
+    #push:
     workflow_dispatch:
 env:
     WORKFLOW_VAR: "I am workflow env var"
