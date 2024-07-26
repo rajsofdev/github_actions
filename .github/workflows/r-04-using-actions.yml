@@ -1,15 +1,44 @@
 name: 04 using actions
-on:
-    push
-jobs:
-    build:
-        runs-on: ubuntu-latest
-        #checkout the code from the repository
-        steps:
-            - name: checkout the code
-              uses: actions/checkout@v4
-            - name: printing folders
-              run: ls
-        #install deps of our react application
 
-        #Execute automate tests
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      # Install Java 18
+      - name: Set up JDK 18
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18'
+
+      # Print current directory structure
+      - name: List directory contents
+        run: ls
+
+      # Additional steps can be added here
+      # e.g., install dependencies and run tests
+      # Example for a Spring Boot application:
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run tests
+        run: mvn test
+
+      # If working with a React application, add the following steps:
+      # - name: Install Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '14'  # Specify the Node.js version
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Run tests
+      #   run: npm test
