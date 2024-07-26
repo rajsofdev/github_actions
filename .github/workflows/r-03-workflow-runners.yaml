@@ -1,6 +1,7 @@
 name: 03 - Workflow Runners
 on:
-    push
+    #push
+    create
 jobs:
     ubuntu-echo:
         runs-on: ubuntu-latest

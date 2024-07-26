@@ -7,7 +7,7 @@ jobs:
         #checkout the code from the repository
         steps:
             - name: checkout the code
-              uses: actions/checkout@4
+              uses: actions/checkout@v4
             - name: printing folders
               run: ls
         #install deps of our react application
