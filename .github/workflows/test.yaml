@@ -2,7 +2,7 @@ name: MY NPM package workflow
 on: 
   push:
     branches:
-      - '*''
+      - '*'
     branches-ignore: 
       - 'main'
 jobs:
@@ -15,3 +15,5 @@ jobs:
           node-version: '20.x'
       - run: npm ci
       - run: npm test
+      - name: pringitn message
+        run: echo "Printing"
