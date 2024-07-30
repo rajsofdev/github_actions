@@ -1,6 +1,6 @@
 name: 04 using actions
 
-on: create
+on: push
 
 jobs:
   build:
@@ -36,4 +36,8 @@ jobs:
         run: npm ci
         
       - name: run unit test
-        run: npm run test
+        run: npm run 
+      - name: Extract version from pom.xml
+        id: extract-version
+        run: echo "::set-output name=version::$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
+  

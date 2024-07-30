@@ -1,6 +1,6 @@
 name: 15 - Working with Matrices
 on:
-    push:
+   # push:
     workflow_dispatch:
 jobs:
     backwards-compatibility:
@@ -31,3 +31,8 @@ jobs:
               run: exit 1
             - name: Perform some test
               run: echo "Running tests on OS - ${{ matrix.OS }} and NodeJS ${{ matrix.node-version }}"
+            
+            - name: Extract version from pom.xml
+              id: extract-version
+              run: echo "::set-output name=version::$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
+        
