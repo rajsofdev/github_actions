@@ -1,5 +1,6 @@
 name: 16 - Working with Environments
 on:
+    push:
     workflow_dispatch:
         inputs:
             target-env:
