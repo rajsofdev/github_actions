@@ -7,6 +7,8 @@ jobs:
         name: ${{ matrix.OS }}-${{ matrix.node-version }}
         runs-on: ubuntu-latest
         strategy:
+            fail-fast: true #if any job failes then stop
+            #if we give false then it will continue on failure
             matrix:
                 node-version:
                     - 18.x
@@ -15,10 +17,17 @@ jobs:
                 OS:
                     - ubuntu-lates
                     - windows-latest
+                include:
+                    - OS: ubuntu-latest
+                      node-version: 16.x
+                      tag: experimental
         steps:
             - name: setup node
               uses: actions/setup-node@v3
               with: 
                 node-version: ${{ matrix.node-version }}
+            - name: Faile if experimental
+              if: matrix.tag == 'experimental'
+              run: exit 1
             - name: Perform some test
               run: echo "Running tests on OS - ${{ matrix.OS }} and NodeJS ${{ matrix.node-version }}"
