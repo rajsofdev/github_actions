@@ -17,6 +17,9 @@ jobs:
             run:
                 working-directory: ${{ env.working-directory }}
         steps:
+
+            - name: Checkout repository
+              uses: actions/checkout@v2
             - name: setu node and NPm Dependencies
               uses: ./.github/actions/composite-cache-deps
               with:
