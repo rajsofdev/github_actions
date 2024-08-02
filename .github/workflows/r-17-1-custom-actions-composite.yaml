@@ -1,13 +1,13 @@
 name: 17 - 1 - Custom Actions - Composite
 on:
-    workflow_dispatch:
-        inputs:
-            target-env:
-                type: choice
-                options:
-                    - dev
-                    - prod
-#            run-name:
+    workflow_dispatch
+        # inputs:
+        #     target-env:
+        #         type: choice
+        #         options:
+        #             - dev
+        #             - prod
+
 env:
     working-directory: 04-using-actions/react-app
 jobs:
